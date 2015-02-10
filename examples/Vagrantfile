@@ -5,7 +5,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 # Ensure role dependencies are in place
 if [ "up", "provision" ].include?(ARGV.first) && File.directory?("roles") &&
-  !(File.directory?("roles/azavea.virtualbox") || File.symlink?("roles/azavea.virtualbox"))
+  !(File.directory?("roles/denkhaus.virtualbox") || File.symlink?("roles/denkhaus.virtualbox"))
   system("ansible-galaxy install --force -r roles.txt -p roles")
 end
 
